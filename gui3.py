@@ -10,21 +10,21 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import subprocess
 
-
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\sdbb2\OneDrive\바탕 화면\build\build\assets\frame3")
+ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame3")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+def cmd():
+    subprocess.run("latte-dock --layout '/aerode/dock.layout.latte'")
+    quit()
 
 window = Tk()
 
 window.geometry("422x493")
 window.configure(bg = "#151515")
-window.eval('tk::PlaceWindow . center')
-window.title("yaoss")
 
 
 canvas = Canvas(
@@ -39,7 +39,7 @@ canvas = Canvas(
 
 canvas.place(x = 0, y = 0)
 canvas.create_text(
-    130.0,
+    128.0,
     287.0,
     anchor="nw",
     text="That’s it!",
@@ -62,7 +62,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: subprocess.run("restart -r now"),
+    command=lambda: cmd(),
     relief="flat"
 )
 button_1.place(
@@ -72,13 +72,13 @@ button_1.place(
     height=42.0
 )
 
-canvas.create_text(
-    165.0,
-    145.0,
-    anchor="nw",
-    text="🎉",
-    fill="#FFFFFF",
-    font=("Pretendard Variable Medium", 96 * -1)
+emj_StartPage = PhotoImage(
+    file=relative_to_assets(("Canvas.Image().png"))
+)
+emj_StartPageWave = canvas.create_image(
+    215.0,
+    190.0,
+    image=emj_StartPage
 )
 window.resizable(False, False)
 window.mainloop()
