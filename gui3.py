@@ -60,7 +60,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: subprocess.run("restart"),
+    command=lambda: subprocess.run("restart -r now"),
     relief="flat"
 )
 button_1.place(

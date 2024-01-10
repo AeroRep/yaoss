@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Updating from local sources.."
+sudo pacman -Syu
+pip3 install -U -r 'assets\requirements.txt'
+pyinstaller --distpath 'build\dist' --clean --onedir --name yaoss -w \
+    --add-data='../assets/frame0/button_1.png' \
+    --add-data='../assets/frame2/button_2.png' \
+    --add-data='../assets/frame2/button_3.png' \
+    --add-data='../assets/frame3/button_1.png' \
+    --add-data='../gui.py' \
+    --add-data='../gui1.py' \
+    --add-data='../gui2.py' \
+    --add-data='../gui3.py' \
