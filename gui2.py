@@ -14,6 +14,8 @@ def relative_to_assets(path: str) -> Path:
 window = Tk()
 
 window.geometry("422x493")
+window.eval('tk::PlaceWindow . center')
+window.title("yaoss")
 window.configure(bg = "#151515")
 
 
@@ -68,7 +70,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: subprocess.run("python gui3.py"),
+    command=lambda: subprocess.run("python .//assets//py/gui3.py"),
     relief="flat"
 )
 button_2.place(

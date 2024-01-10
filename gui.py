@@ -1,6 +1,5 @@
 from pathlib import Path
 
-# from tkinter import *
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
 import subprocess, os, traceback
 
@@ -14,6 +13,7 @@ try:
 
     window = Tk()
 
+    window.eval('tk::PlaceWindow . center')
     window.geometry("422x493")
     window.title("yaoss")
     window.configure(bg = "#151515")
@@ -54,7 +54,7 @@ try:
         image=button_image_1,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: subprocess.run("python " + os.getcwd() + "\\gui1.py | pkill -9 yaoss"),
+        command=lambda: subprocess.run("python " + os.getcwd() + "\\assets\\py\\gui1.py | pkill -9 yaoss"),
         relief="flat",
         bd=0
     )

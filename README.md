@@ -5,7 +5,10 @@ Yet Another Operating System Setup
 - yaoss is a First time setup program for Aero Desktop system.
 
 ## dependecies
-- install it through "requirements.txt"
+- tkinter
+- sys = default
+- subprocess
+- pyinstaller >= 6.3.0
 
 ## Build
-- sudo ./build/buildfromhere
+- pyinstaller (your/path/to/app.py) --clean --onedir --onefile -n yaoss --noconsole 

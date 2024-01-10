@@ -1,3 +1,3 @@
 import subprocess
 
-subprocess.run("python ./gui.py")
+subprocess.run("python ./assets/py/gui.py")

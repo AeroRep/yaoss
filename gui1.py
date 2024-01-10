@@ -14,6 +14,8 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
+window.eval('tk::PlaceWindow . center')
+window.title("yaoss")
 window.geometry("422x493")
 window.configure(bg = "#151515")
 
@@ -58,7 +60,7 @@ window.resizable(False, False)
 
 try:
     subprocess.run("sudo pacman -Syu | pacman -Sy latte-dock | git clone https://github.com/aerorep/aero-de-conf -C /deconf | latte-dock --import-layout /deconf/aerodock.layout.latte | latte-dock")
-    subprocess.run("python gui2.py")
+    subprocess.run("python .//assets//py/gui2.py")
     subprocess.run("pkill -9 yaoss")
 except:
     messagebox.showerror("An error occurred", "Unexpected error occurred.\n" + traceback.format_exc())

@@ -23,6 +23,8 @@ window = Tk()
 
 window.geometry("422x493")
 window.configure(bg = "#151515")
+window.eval('tk::PlaceWindow . center')
+window.title("yaoss")
 
 
 canvas = Canvas(
