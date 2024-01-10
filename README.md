@@ -11,4 +11,4 @@ Yet Another Operating System Setup
 - pyinstaller >= 6.3.0
 
 ## Build
-- pyinstaller (your/path/to/app.py) --clean --onedir --onefile -n yaoss --noconsole 
+- sudo ./build/buildfromhere
